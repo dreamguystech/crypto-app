@@ -1,10 +1,4 @@
-/*!
- * Front-end site library
- * @license MIT
- * Inline scripts may access the api using an async handler:
- *   var Framework = Framework || [];
- *   Framework.push(readyFunction);
- */
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -764,7 +758,7 @@
 
 	var Framework = __webpack_require__(1);
 
-	Framework.define('forms', module.exports = function($, _) {
+	Framework.define('forms', module.exports = function($, _) {/*
 	  var api = {};
 
 	  // Cross-Domain AJAX for IE8
@@ -840,7 +834,7 @@
 	    listening = true;
 
 	    // Handle form submission for Framework forms
-	    $doc.on('submit', namespace + ' form', function(evt) {
+	    $doc.on('submit', namespace + ' form', function(evt) { 
 	      var data = $.data(this, namespace);
 	      if (data.handler) {
 	        data.evt = evt;
@@ -1046,7 +1040,7 @@
 
 	  // Export module
 	  return api;
-	});
+	*/});
 
 
 /***/ },

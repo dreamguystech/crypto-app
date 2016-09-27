@@ -1,89 +1,98 @@
+var codeDate = new Date();
 $(document).ready(function(e) {
-    $(".loading-mask").css('opacity','0.5');
-	
-	$.ajax({
-        url:'http://www.dreamguys.co.in/display/crypto-currency/api/get_posts/?post_type=currency&count=10&page=1',
-        type:'POST',
-        data:'',
-		dataType:'json',
-        success:function(data){ 
-			$("#pcount").val(data.count_total);
-			$("#pno").val(parseInt(pno)+1);
-			var currency='';
-			if(parseInt(pno) == 1)
-			$(".news-container .grid").empty();
-			for(var i=0;i<data.posts.length;i++){
-				var url='';
-				if(data.posts[i].attachments.length > 0)url=data.posts[i].attachments[0]['url'];
-				var cur_rates = data.posts[i].cur_rates.split(",");
-				if(data.posts[i].attachments.length > 0)url=data.posts[i].attachments[0]['url'];
-				currency +='<li class="news-item"><a href="currency.html" class="news-link"><span><img src="'+url+'" width="28"></span> '+data.posts[i].title+' 1= £ '+cur_rates[0]+'</a><i class="icon fa fa-adjust"></i></li>';
-			}
-			$("#news-list").append(currency);
-			$("#news-list").endlessRiver({
-				buttons: true
-			});
+	latitude = window.localStorage.getItem("latitude");
+    longitude = window.localStorage.getItem("longitude");
+	 codeDate = new Date;
+        if (codeDate.dst() == false) {
+            if(latitude){
+                times = prayTime.getPrayerTimes(codeDate, latitude, longitude, 0);
+            }
+            msq_times = prayTime.getPrayerTimes(codeDate, 51.451808, -0.192757, 0);
+    }
+    else {
+        if(latitude){
+            times = prayTime.getPrayerTimes(codeDate, latitude, longitude, 1);
         }
-    });
-	
-    loadcontent('post',10,1);
+      msq_times = prayTime.getPrayerTimes(codeDate, 51.451808, -0.192757, 1);   
+    }
+
+// TODAY Code to output
+    
+    var str = '';
+
+    if(latitude){
+        var tRise = times[1];
+        var tMagh = times[4];
+        var newFajr = calcNewFajr(tRise,tMagh);
+    }
+
+    var msq_tRise = msq_times[1];
+    var msq_tMagh = msq_times[4];
+    var msq_newFajr = calcNewFajr(msq_tRise,msq_tMagh);
+                
+    for(var i = 0; i < 6; i++) {
+        
+        str += '<div class="w-row list-message"><div class="w-col w-col-5 w-col-small-5 w-col-tiny-5 n-p-l"><div class="message-title">'+ prayTime.timeNames[i]+ '</div></div>';
+        if (i == 0) {
+            if(latitude){
+                times[0] = newFajr;
+            }
+            msq_times[0] = msq_newFajr;
+        }
+            str += '<div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><div class="message-title">'+ msq_times[i]+ '</div></div>';
+        if(latitude){
+            str += '<div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><div class="message-title">'+ times[i]+ '</div></div></div>';
+        }else{
+            str += '<div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><div class="message-title">0:00</div></div></div>';
+        }
+    }
+	$(".salat-times").append(str);
+  /*  $(".salat-times").append('<div class="w-row list-message"><div class="w-col w-col-5 w-col-small-5 w-col-tiny-5 n-p-l"><div class="message-title">dfg</div></div><div class="w-col w-col-3 w-col-small-3 w-col-tiny-3"><div class="message-title">dfg</div></div><div class="w-col w-col-2 w-col-small-2 w-col-tiny-2 n-p-r"><div class="message-title">dfg</div></div></div>');*/
 });
 
-function loadcontent(type,pcount,pno){
-	$.ajax({
-        url:'http://www.dreamguys.co.in/display/crypto-currency/api/get_posts/?post_type='+type+'&count='+pcount+'&page='+pno,
-        type:'POST',
-        data:'',
-		dataType:'json',
-        success:function(data){ 
-			$("#pcount").val(data.count_total);
-			$("#pno").val(parseInt(pno)+1);
-			var cont=art_cnt='';
-			if(parseInt(pno) == 1)
-			$(".news-container .grid").empty();
-			for(var i=0;i<data.posts.length;i++){
-				var url='';
-				//console.log(data.posts[i].attachments[0]['url']);
-				if(data.posts[i].attachments.length > 0)url=data.posts[i].attachments[0]['url'];
-				cont +='<div class="grid-item"><div class="card"><div class="card-image"><a href="#" data-bid="'+data.posts[i].id+'"><img src="'+url+'" alt="" /></a></div><div class="card-content"><h5><a href="#" data-bid="'+data.posts[i].id+'"><strong>'+data.posts[i].title+'</strong></a></h5></div><div class="card-feedback"><div class="card-users"></div><div class="comment-count"><i class="ion-chatbubble-working"></i> <span>'+data.posts[i].comment_count+'</span></div></div></div></div>';
-				
-				art_cnt += '<div id="article_'+data.posts[i].id+'" style="display:none;"><div class="navbar" style="width:100%;"><div class="wrapper-mask" data-ix="menu-mask" style="opacity: 0;"></div><a class="w-inline-block navbar-button" href="#" data-load="1"><div class="navbar-button-icon icon ion-ios-close-empty"></div></a><a class="w-inline-block navbar-button right menu-btn" href="currency.html" data-loader="1"><div class="right-menu"><span>Currency</span></div></a></div><div class="text-new no-borders"><div class="separator-fields"></div><div><img src="'+url+'" alt="" /></div><h2 class="title-new">'+data.posts[i].title+'</h2></div><div class="separator-fields"></div><p class="description-new">'+data.posts[i].content+'</p></div>';
-			}
-			$(".loading-mask").css('opacity','0');
-			$(".news-container .grid").append(cont);
-			$(".news-container.item-new").append(art_cnt);
-			var msnry = new Masonry( '.grid', {
-			  itemSelector: '.grid-item',
-			  isAnimated: true,
-              isFitWidth: true
-			});
-        }
-    });
-}
+function calcNewFajr(tRise,tMagh) {
+        var newFajr = '';
 
-$(window).scroll(function () {
-	if($(".grid").parent().css('display') != 'none'){
-		if(parseInt($("#pcount").val()+10) >= (parseInt($("#pno").val())*10))
-		{
-			if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
-				$(".loading-mask").css('opacity','0.5');
-				loadcontent('post',10,$("#pno").val());
-			}
-		}
-	}
- });
- 
- $(document).on('click','a[data-bid]',function(){
-	 //$(".loading-mask").css('opacity','0.5');
-	 $(".w-nav.navbar, .news-container").hide();
-	 $(".news-container.item-new").show();
-	 $(".news-container.item-new").children().hide();
-	 $(".news-container.item-new #article_"+$(this).attr('data-bid')).show();
-	// $(".loading-mask").css('opacity','0');
- });
- 
- $(document).on('click','.news-container.item-new a',function(){
-	 $(".w-nav.navbar, .news-container").show();
-	 $(".news-container").show();
-	 $(".news-container.item-new").children().hide();
- });
+        // Convert Sunrise to minutes
+        var rise = new Array();
+        rise = tRise.split(':');
+        sunriseTime = (((rise[0]*1)*60) + (rise[1]*1));
+
+        // Convert Maghrib to minutes
+        var magh = new Array();
+        magh = tMagh.split(':');
+        maghribTime = (((magh[0]*1)*60) + (magh[1]*1));
+
+        // Do a few tests and adjustments
+        fajrTime = (sunriseTime - 90);
+
+        // Then convert the result to hh:mm format
+        var Hours = Math.floor(fajrTime/60);
+        var Minutes = fajrTime%60;
+        var Time = Hours + ":" + Minutes;
+        var hours = zeroPad(Hours,2);
+        var mins  = zeroPad(Minutes,2);
+        var newFajr  = hours + ":" + mins;
+
+        // Return the result
+        return newFajr
+    }
+
+    function zeroPad(num,count) {
+        var numZeropad = num + '';
+        while(numZeropad.length < count) {
+            numZeropad = "0" + numZeropad;
+        }
+        return numZeropad;
+    }
+
+// these two Date prototype function added from http://javascript.about.com/library/bldst.htm
+    Date.prototype.stdTimezoneOffset = function() {
+        var jan = new Date(this.getFullYear(), 0, 1);
+        var jul = new Date(this.getFullYear(), 6, 1);
+        return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+    }
+
+    Date.prototype.dst = function() {
+        return this.getTimezoneOffset() < this.stdTimezoneOffset();
+    }

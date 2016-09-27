@@ -2,7 +2,7 @@ document.addEventListener("touchstart", function(){}, true);
 
 $(function() {
     'use strict';
-
+	$(".profile-icon").append(window.localStorage.getItem("prof_img"));
     var dataSplash = $('.page-content').attr('data-splash');
     var dataRedirect = $('.page-content').attr('data-redirect');
     if(dataSplash>0){
@@ -84,12 +84,4 @@ $(function() {
     window.onpopstate = function(e){
         $('.loading-mask').addClass('stop-loading');
     };
-	
-	
 });
-
-  /*$(document).ready(function() {
-	$("#news-list").endlessRiver({
-        buttons: true
-    });
-  });*/
