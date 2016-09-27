@@ -30,6 +30,7 @@ $(document).ready(function(e) {
 });
 
 function loadcontent(type,pcount,pno){
+	
 	$.ajax({
         url:'http://www.dreamguys.co.in/display/crypto-currency/api/get_posts/?post_type='+type+'&count='+pcount+'&page='+pno,
         type:'POST',
@@ -49,14 +50,22 @@ function loadcontent(type,pcount,pno){
 				
 				art_cnt += '<div id="article_'+data.posts[i].id+'" style="display:none;"><div class="navbar" style="width:100%;"><div class="wrapper-mask" data-ix="menu-mask" style="opacity: 0;"></div><a class="w-inline-block navbar-button" href="#" data-load="1"><div class="navbar-button-icon icon ion-ios-close-empty"></div></a><a class="w-inline-block navbar-button right menu-btn" href="currency.html" data-loader="1"><div class="right-menu"><span>Currency</span></div></a></div><div class="text-new no-borders"><div class="separator-fields"></div><div><img src="'+url+'" alt="" /></div><h2 class="title-new">'+data.posts[i].title+'</h2></div><div class="separator-fields"></div><p class="description-new">'+data.posts[i].content+'</p></div>';
 			}
-			$(".loading-mask").css('opacity','0');
+			
 			$(".news-container .grid").append(cont);
 			$(".news-container.item-new").append(art_cnt);
+			
 			var msnry = new Masonry( '.grid', {
 			  itemSelector: '.grid-item',
 			  isAnimated: true,
-              isFitWidth: true
+              isFitWidth: true,
+			  isInitLayout : true,
 			});
+			$(".loading-mask").css('opacity','0');
+			setInterval(function(){
+				msnry.reloadItems();
+				msnry.layout();
+				},500);
+
         }
     });
 }
