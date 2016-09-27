@@ -48,7 +48,7 @@ function loadcontent(type,pcount,pno){
 				if(data.posts[i].attachments.length > 0)url=data.posts[i].attachments[0]['url'];
 				cont +='<div class="grid-item"><div class="card"><div class="card-image"><a href="#" data-bid="'+data.posts[i].id+'"><img src="'+url+'" alt="" /></a></div><div class="card-content"><h5><a href="#" data-bid="'+data.posts[i].id+'"><strong>'+data.posts[i].title+'</strong></a></h5></div><div class="card-feedback"><div class="card-users"></div><div class="comment-count"><i class="ion-chatbubble-working"></i> <span>'+data.posts[i].comment_count+'</span></div></div></div></div>';
 				
-				art_cnt += '<div id="article_'+data.posts[i].id+'" style="display:none;"><div class="navbar" style="width:100%;"><div class="wrapper-mask" data-ix="menu-mask" style="opacity: 0;"></div><a class="w-inline-block navbar-button" href="#" data-load="1"><div class="navbar-button-icon icon ion-ios-close-empty"></div></a><a class="w-inline-block navbar-button right menu-btn" href="currency.html" data-loader="1"><div class="right-menu"><span>Currency</span></div></a></div><div class="text-new no-borders"><div class="separator-fields"></div><div><img src="'+url+'" alt="" /></div><h2 class="title-new">'+data.posts[i].title+'</h2></div><div class="separator-fields"></div><p class="description-new">'+data.posts[i].content+'</p></div>';
+				art_cnt += '<div id="article_'+data.posts[i].id+'" style="display:none;"><div class="navbar" style="width:100%;"><div class="wrapper-mask" data-ix="menu-mask" style="opacity: 0;"></div><a class="w-inline-block navbar-button" href="#" data-load="1"><div class="navbar-button-icon icon ion-ios-close-empty"></div></a><a class="w-inline-block navbar-button right menu-btn" href="currency.html" data-loader="1"><div class="right-menu"><span>Currency</span></div></a></div><div class="text-new no-borders" style="padding-top:60px;"><div class="separator-fields"></div><div><img src="'+url+'" alt="" /></div><h2 class="title-new">'+data.posts[i].title+'</h2></div><div class="separator-fields"></div><p class="description-new">'+data.posts[i].content+'</p></div>';
 			}
 			
 			$(".news-container .grid").append(cont);
@@ -87,6 +87,7 @@ $(window).scroll(function () {
 	 $(".w-nav.navbar, .news-container").hide();
 	 $(".news-container.item-new").show();
 	 $(".news-container.item-new").children().hide();
+	 $("html, body").animate({ scrollTop: 100 }, 600);
 	 $(".news-container.item-new #article_"+$(this).attr('data-bid')).show();
 	// $(".loading-mask").css('opacity','0');
  });
