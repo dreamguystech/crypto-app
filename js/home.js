@@ -84,10 +84,11 @@ $(window).scroll(function () {
  
  $(document).on('click','a[data-bid]',function(){
 	 //$(".loading-mask").css('opacity','0.5');
+	 $("html, body").animate({ scrollTop: 0 }, 600);
 	 $(".w-nav.navbar, .news-container").hide();
 	 $(".news-container.item-new").show();
 	 $(".news-container.item-new").children().hide();
-	 $("html, body").animate({ scrollTop: 100 }, 600);
+	 
 	 $(".news-container.item-new #article_"+$(this).attr('data-bid')).show();
 	// $(".loading-mask").css('opacity','0');
  });
