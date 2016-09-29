@@ -1843,3 +1843,24 @@ input[type=text]:focus, textarea:focus {
 .mt-10 {
     margin-top: 10px;
 }
+
+.light-text {
+    color: #a3afb7;
+    font-size:11px;
+}
+.comment-list > .list-item {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.comment-det > p {
+    color: #666;
+    margin: 0;
+    padding: 0;
+}
+.title {
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    margin-top: 10px;
+}

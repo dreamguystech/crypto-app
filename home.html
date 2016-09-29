@@ -2,10 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Splash Screen</title>
+  <title>News</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/framework.css">
+  <link rel="stylesheet" type="text/css" href="css/endlessRiver.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
   <link rel="apple-touch-icon" href="images/logo.ico">
@@ -14,21 +15,39 @@
 </head>
 <body>
   <section class="w-section mobile-wrapper">
-    <div class="page-content bg-gradient" id="main-stack" data-scroll="0" data-splash="10" data-redirect="home.html">
-      <div class="body">
-        <div class="splash-logo">
-          <div class="loading-icon splash">
-            <div class="navbar-button-icon icon ion-load-d"></div>
-          </div>
+    <div class="page-content" id="main-stack">
+      <div class="w-nav navbar" data-collapse="all" data-animation="over-left" data-duration="400" data-contain="1" data-easing="ease-out-quint" data-no-scroll="1">
+        <div class="w-container">
+          <div class="wrapper-mask" data-ix="menu-mask"></div>
+          <!--<div class="navbar-title">News</div>-->
+                    <div class="news-ticker">
+                      <ul id="news-list">
+                        
+                      </ul>
+                    </div>
         </div>
+      </div>
+      <div class="body padding smaller search-fixed" id="search-fixed">
         
       </div>
+      
+      <div class="news-container item-new"></div>
+      
+      <div class="news-mask"></div>
+      <div class="news-container" style="float:left; width:100%; background-color:#f3f3f3;">
+        <div class="grid">  
+                  
+        </div>
+      </div>
+      <input type="hidden" id="pcount" value="" />
+      <input type="hidden" id="pno" value="1" />
     </div>
     <div class="page-content loading-mask" id="new-stack">
       <div class="loading-icon">
         <div class="navbar-button-icon icon ion-load-d"></div>
       </div>
     </div>
+  <div class="shadow-layer"></div>
   </section>
   <script src="js/webfont.js"></script>
   <script>
@@ -41,7 +60,12 @@
   <script type="text/javascript" src="js/modernizr.js"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/framework.js"></script>
+  <script type="text/javascript" src="js/masonry.min.js"></script>
+ 
   <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/home.js"></script>
+   <script type="text/javascript" src="js/endlessRiver.js"></script>
   <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
