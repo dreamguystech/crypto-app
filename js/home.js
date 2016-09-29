@@ -48,7 +48,7 @@ function loadcontent(type,pcount,pno){
 				if(data.posts[i].attachments.length > 0)url=data.posts[i].attachments[0]['url'];
 				cont +='<div class="grid-item"><div class="card"><div class="card-image"><a href="#" data-bid="'+data.posts[i].id+'"><img src="'+url+'" alt="" /></a></div><div class="card-content"><h5><a href="#" data-bid="'+data.posts[i].id+'"><strong>'+data.posts[i].title+'</strong></a></h5></div><div class="card-feedback"><div class="card-users"></div><div class="comment-count"><i class="ion-chatbubble-working"></i> <span>'+data.posts[i].comment_count+'</span></div></div></div></div>';
 				
-				art_cnt += '<div id="article_'+data.posts[i].id+'" style="display:none;"><div class="navbar" style="width:100%;"><div class="wrapper-mask" data-ix="menu-mask" style="opacity: 0;"></div><a class="w-inline-block navbar-button" href="#" data-load="1"><div class="navbar-button-icon icon ion-ios-close-empty"></div></a><a class="w-inline-block navbar-button right menu-btn" href="currency.html" data-loader="1"><div class="right-menu"><span>Currency</span></div></a></div><div class="text-new no-borders" style="padding-top:60px;"><div class="separator-fields"></div><div><img src="'+url+'" alt="" /></div><h2 class="title-new">'+data.posts[i].title+'</h2></div><div class="separator-fields"></div><p class="description-new">'+data.posts[i].content+'</p>';
+				art_cnt += '<div id="article_'+data.posts[i].id+'" style="display:none;"><div class="navbar" style="width:100%;"><div class="wrapper-mask" data-ix="menu-mask" style="opacity: 0;"></div><a class="w-inline-block navbar-button" href="#" data-load="1"><div class="navbar-button-icon icon ion-ios-close-empty"></div></a><a class="w-inline-block navbar-button right menu-btn" href="currency.html" data-loader="1"><div class="right-menu"><span>Currency</span></div></a></div><div class="text-new no-borders" style="padding-top:60px;"><div class="separator-fields"></div><div><img src="'+url+'" alt="" /></div><h2 class="title-new">'+data.posts[i].title+'</h2><div>'+data.posts[i].content+'</div>';
 				
 				/*art_cnt += '<div class="w-clearfix"><div class="w-widget w-widget-facebook social-block"><iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fsensationhemes&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 92px; height: 20px;"></iframe></div><div class="w-widget w-widget-twitter social-block"><iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fsensationthemes.com&amp;counturl=sensationthemes.com&amp;text=Check%20out%20this%20site&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 110px; height: 20px;"></iframe></div></div>';*/
 				
@@ -78,7 +78,7 @@ function loadcontent(type,pcount,pno){
 					}
 					art_cnt += '</ul></div></div>';
 				}
-				art_cnt += '</div>';
+				art_cnt += '</div></div>';
 			}
 			
 			$(".news-container .grid").append(cont);
