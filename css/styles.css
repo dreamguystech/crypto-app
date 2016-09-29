@@ -1864,3 +1864,6 @@ input[type=text]:focus, textarea:focus {
     font-size: 14px;
     margin-top: 10px;
 }
+.text-new p {
+    padding: 0;
+}
