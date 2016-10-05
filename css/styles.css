@@ -1477,10 +1477,11 @@ a {
   font-size: 16px;
 }
 .news-slider {
-  height: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
+  height: 210px;
+  /*padding-right: 20px;
+  padding-left: 20px;*/
   background-color: transparent;
+  top:62px;
 }
 .news-slider.grey {
   border-bottom: 1px solid #e6e6e6;
