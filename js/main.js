@@ -271,9 +271,7 @@ $('#open-left').sideNav({ // Trigger id
 //$('.swipebox').swipebox();
 
 // Masonry
-$('.grid').masonry({
-    itemSelector: '.grid-item'
-});
+
 
 // Material Layout
 /*$('.parallax').parallax();

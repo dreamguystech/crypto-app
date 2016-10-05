@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/framework.css">
-  <link rel="stylesheet" type="text/css" href="css/endlessRiver.css">
+  
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico">
   <link rel="apple-touch-icon" href="images/logo.ico">
@@ -19,24 +19,51 @@
       <div class="w-nav navbar" data-collapse="all" data-animation="over-left" data-duration="400" data-contain="1" data-easing="ease-out-quint" data-no-scroll="1">
         <div class="w-container">
           <div class="wrapper-mask" data-ix="menu-mask"></div>
-                    <div class="news-ticker">
-                      <ul id="news-list">
-                        
-                      </ul>
-                    </div>
+          
+          <div class="navbar-title"><a class="w-inline-block navbar-button left menu-btn" href="#" data-loader="1">
+			<div class="left-menu"><img src="images/back.png" width="20" height="20" style="display:none;"> </div>
+          </a> Crypto Currency</div>         
         </div>
       </div>
-      <div class="body padding smaller search-fixed" id="search-fixed">
-        
-      </div>
+      <div class="w-slider news-slider grey" data-animation="slide" data-duration="500" data-infinite="1" data-delay="2000" data-autoplay="1" data-nav-spacing="4">
+            <div class="w-slider-mask">
+              
+            </div>
+            <div class="w-slider-arrow-left">
+              <div class="w-icon-slider-left news-arrows left"></div>
+            </div>
+            <div class="w-slider-arrow-right">
+              <div class="w-icon-slider-right news-arrows right"></div>
+            </div>
+            <div class="w-slider-nav w-round news-slidenav"></div>
+            <div class="separator-button-input"></div>
+          </div>
       
       <div class="news-container item-new"></div>
       
       <div class="news-mask"></div>
-      <div class="news-container" style="float:left; width:100%; background-color:#f3f3f3;">
-        <div class="grid">  
-                  
+      <div class="body">
+        <ul class="list currency-list">
+          <li class="list-item">
+		       <div class="w-row">
+                <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4 n-p-l">
+				  <p class="list-title">Name</p>
+                </div>
+                <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
+                  <p class="list-title">Price</p>
+                </div>
+                <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4 n-p-r">
+				<p class="list-title">Price Graph</p>
+                </div>
+              </div>
+          </li>
+          
+        </ul>
+        
+        <div class="currency-view">
+        
         </div>
+        
       </div>
       <input type="hidden" id="pcount" value="" />
       <input type="hidden" id="pno" value="1" />
@@ -59,12 +86,12 @@
   <script type="text/javascript" src="js/modernizr.js"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/framework.js"></script>
-  <script type="text/javascript" src="js/masonry.min.js"></script>
- <script src="phonegap.js" type="text/javascript"></script>
+ 
+ <!--<script src="phonegap.js" type="text/javascript"></script>-->
   <script type="text/javascript" src="js/scripts.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+ 
   <script type="text/javascript" src="js/home.js"></script>
-   <script type="text/javascript" src="js/endlessRiver.js"></script>
+    <script type="text/javascript" src="http://www.dreamguys.co.in/display/crypto-currency/wp-content/plugins/cryptocurrency/js/highcharts.js?ver=1.0.0"></script>
   <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
