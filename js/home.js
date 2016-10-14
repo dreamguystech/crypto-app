@@ -2,7 +2,7 @@ $(document).ready(function(e) {
     $(".loading-mask").css('opacity','0.5');
 	
 	$.ajax({
-        url:'http://www.dreamguys.co.in/display/crypto-currency/api/get_posts/?post_type=post&count=3&page=1',
+        url:'http://www.dreamguys.co.in/display/crypto-currency/api/get_posts/?post_type=post&count=3&page=1&order=ASC',
         type:'POST',
         data:'',
 		dataType:'json',
