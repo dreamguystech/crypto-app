@@ -111,7 +111,7 @@ a {
   box-shadow: none;
 }
 .body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 
@@ -1481,11 +1481,11 @@ a {
   /*padding-right: 20px;
   padding-left: 20px;*/
   background-color: transparent;
-  top:62px;
+  top:60px;
 }
 .news-slider.grey {
-  border-bottom: 1px solid #e6e6e6;
-  background-color: #fafafa;
+ /* border-bottom: 1px solid #e6e6e6;
+  background-color: #fafafa;*/
 }
 .news-slide {
   height: 100%;
