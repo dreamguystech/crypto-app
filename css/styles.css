@@ -85,7 +85,7 @@ a {
   position: fixed;
   z-index: 5;
   height: 60px;
-  padding-top: 15px;
+  padding-top: 8px;
   /*background-color: #000;*/
   color: white;
    background-color: #7d7e7d; background-image: -webkit-gradient(linear, left top, left bottom, from(#7d7e7d), to(#0e0e0e));
@@ -112,6 +112,7 @@ a {
 }
 .body {
   padding-top: 40px;
+  background:#f2f1ef;
 }
 
 
@@ -375,11 +376,15 @@ a {
   opacity: 0.62;
 }
 .hero-image-title {
-  position: absolute;
-  left: 50px;
-  bottom: 30px;
-  z-index: 1;
-  color: white;
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    bottom: 0;
+    color: white;
+    /*left: 50px;*/
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
 }
 
 
@@ -1504,6 +1509,7 @@ a {
   top: 169px;
   bottom: auto;
   font-size: 6px;
+  display:none;
 }
 .portfolio-image-hidden {
   display: none;
