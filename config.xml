@@ -53,7 +53,7 @@
     <icon src="res/icon/ios/retina.png" gap:platform="ios" width="114" height="114" />
     <icon src="res/icon/ios/icon-120x120.png" gap:platform="ios" width="120" height="120" />
     <icon src="res/icon/ios/retina_ipad.png" gap:platform="ios" width="144" height="144" />
-    <icon src="res/icon/ios/icon-152x152.png" gap:platform="ios" width="152" height="152" />
+    <icon src="res/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152" />
 
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
