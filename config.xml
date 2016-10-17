@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="com.Dreamguys.CryptoInfo" version="1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Crypto Currency</name>
+<widget id="com.Dreamguys.CryptoInfo" version="1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Crypto Info</name>
     <description>
-        Crypto Currency is an intermediate app which shows about the crypto currencies updates and thier news.
+        Crypto Info is an intermediate app which shows about the crypto currencies updates and thier news.
     </description>
     <author email="dreamguystech@gmail.com" href="http://dreamguys.co.in/">
         DreamGuy's
