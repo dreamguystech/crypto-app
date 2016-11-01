@@ -91,7 +91,7 @@ var baseConfig = {
     };
 function loadcontent(type,pcount,pno){
 	$.ajax({
-        url:'http://cryptoinfo.co.uk/api/get_posts/?post_type='+type+'&count='+pcount+'&page='+pno,
+        url:'http://cryptoinfo.co.uk/api/get_posts/?post_type='+type+'&count='+pcount+'&page='+pno+'&order=ASC',
         type:'POST',
         data:'',
 		dataType:'json',
