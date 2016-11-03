@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="com.Dreamguys.CryptoInfo" version="1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.Dreamguys.CryptoInfo" version="1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Crypto Info</name>
     <description>
         Crypto Info is an intermediate app which shows about the crypto currencies updates and thier news.
@@ -16,7 +16,7 @@
         <param name="onload" value="true" />
     </feature>
 	
-	<preference name="phonegap-version" value="3.7.0" />
+    <preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
@@ -38,15 +38,9 @@
 	<preference name="AndroidPersistentFileLocation" value="Compatibility" />
 	<preference name="SplashScreen" value="screen" />
  	<preference name="SplashScreenDelay" value="3000" />
-    <plugin name="org.apache.cordova.network-information" source="pgb" />
-    <plugin name="org.apache.cordova.dialogs" source="pgb" />
+    <plugin name="org.apache.cordova.network-information" source="pgb" />    
     <plugin name="org.apache.cordova.splashscreen" source="pgb" />
-    <plugin name="org.apache.cordova.media" source="pgb" />
-    <plugin name="com.phonegap.plugins.pushplugin" source="pgb" />
-    <plugin name="cordova-plugin-device" source="pgb" />
-    <plugin name="cordova-plugin-file" source="pgb" />
-    <plugin name="cordova-plugin-file-transfer" source="pgb" />
-
+    
     <icon src="res/icon/ios/classic.png" gap:platform="ios" width="57" height="57" />
     <icon src="res/icon/ios/ipad.png" gap:platform="ios" width="72" height="72" />
     <icon src="res/icon/ios/icon-76x76.png" gap:platform="ios" width="76" height="76" />
