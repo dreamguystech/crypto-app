@@ -55,7 +55,7 @@ $(document).ready(function(e) {
         }
     });
 	
-    loadcontent('currency',20,1);
+    //loadcontent('currency',20,1);
 });
 var baseConfig = {
         xAxis: {
