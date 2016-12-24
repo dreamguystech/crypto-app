@@ -201,4 +201,8 @@ $(document).on('click','.news-container.item-new a.navbar-button',function(){
 	 $(".w-nav.navbar, .news-container").show();
 	 $(".currency-list, .w-slider").show();
 	 $(".body").show();
+<<<<<<< HEAD
 });
+=======
+ });
+>>>>>>> origin/master
