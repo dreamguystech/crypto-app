@@ -147,7 +147,7 @@ function loadcontent(type,pcount,pno){
 			
 		if(parseInt($("#pcount").val()+10) >= (parseInt($("#pno").val())*10))
 		{			
-				setTimeout(function(){loadcontent('currency',20,$("#pno").val());},2000);
+				//setTimeout(function(){loadcontent('currency',20,$("#pno").val());},2000);
 			
 		}	
 			
